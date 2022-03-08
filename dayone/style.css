@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+:root{
+    --primary-color:#4daf54;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, #4daf54,#3d8880);
+    
+}
+
+.card{
+    margin: 120px auto;
+    width: 320px;
+    height: 500px;
+    background: #272d40;
+    padding: 20px;
+    border-radius:  15px;
+    color:white;
+    position: relative;
+}
+
+.card__heart,.card__cart{
+    font-size: 25px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.card__cart{
+    left: unset;
+    right: 20px;
+}
+
+.card__img{
+    width:100%;
+
+    /* pass with the translate underbove*/
+    transition: 0.5s;
+}
+
+.card__img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__tittle,.card__price{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card__tittle{
+    color: var(--primary-color);
+}
+
+.card__size,.card__color{
+    /*hien thi theo 1 khoi*/
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card__size span{
+    padding: 2px 5px;
+    background: #dadada;
+    color:black;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.card__color span{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px; 
+}
+
+.card__color--green{
+    background: green;
+}
+
+.card__color--red{
+    background: red;
+}
+
+.card__color--black{
+    background: black;
+}
+
+.card__action button{
+    background: var(--primary-color);
+    border: none;
+    outline: none;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: normal;
+}
+
+/*when hover then rotate*/
+/*translateY move up to 90px*/
+.card:hover .card__img{
+    transform: translateY(-90px) rotate(-20deg);
+}
+
+.card:hover .card__tittle{
+    transform: translate(-55px,-70px);
+}
+
+.card:hover .card__price{
+    transform: translate(-117px,-70px);
+}
+
+/*push the whole down*/
+.card__size{
+    margin-top:150px;
+}
+
+.card__size,.card__color,.card__action{
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.5s;
+    transition-delay: 0.4s;
+}
+
+.card:hover .card__size,.card:hover .card__color,.card:hover .card__action{
+    visibility: visible;
+    opacity: 100;
+}
+
+.card:hover .card__size{
+    margin-top: -30px;
+}
