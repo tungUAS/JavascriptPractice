@@ -104,6 +104,12 @@ body{
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: normal;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.card__action button:hover{
+    transform: scale(0.9);
 }
 
 /*when hover then rotate*/
