@@ -21,6 +21,7 @@ function showGallery(){
     }
     galleryImg.src=images[currentIndex].src
     gallery.classList.add('show')
+    console.log(currentIndex)
 }
 
 images.forEach((item,index)=>{
@@ -34,11 +35,6 @@ close.addEventListener('click',function(){
     gallery.classList.remove('show')
 })
 
-document.addEventListener('keydown',function(){
-    if(e.keycode == 27){
-        gallery.classList.remove('show')
-    }
-})
 
 prev.addEventListener('click',function(){
     if(currentIndex > 0){
@@ -49,7 +45,7 @@ prev.addEventListener('click',function(){
 
 right.addEventListener('click',function(){
     if(currentIndex < images.length-1){
-        currentIndex--;
+        currentIndex++;
         showGallery();
     }
-})
+}) 
